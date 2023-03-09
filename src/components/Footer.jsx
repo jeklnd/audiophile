@@ -109,10 +109,10 @@ export default function Footer() {
                     <Grid item xs={12} sm={12} md={8} lg={6}>
                         <Typography variant="body1" sx={{ color: "#878787" }}>
                             Audiophile is an all in one stop to fulfill your
-                            audio needs. We're a small team of music lovers and
+                            audio needs. We&apos;re a small team of music lovers and
                             sound specialists who are devoted to helping you get
                             the most out of personal audio. Come and visit our
-                            demo facility - we're open 7 days a week.
+                            demo facility - we&apos;re open 7 days a week.
                         </Typography>
                     </Grid>
                     <Grid
