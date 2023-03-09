@@ -10,22 +10,27 @@ import {
     Backdrop,
     Dialog,
     Divider,
-    useMediaQuery,
+    Box,
 } from "@mui/material";
-import { Link } from "next/link";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "public/assets/shared/desktop/logo.svg";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
+import { theme } from "@/pages/index.js";
 
 export default function Navbar({ theme }) {
     const links = ["home", "headphones", "speakers", "earphones"];
-    // const isScreenMedium = useMediaQuery((theme) =>
-    //     theme.breakpoints.down("md")
-    // );
 
     return (
         <>
             <AppBar
-                sx={{ position: "sticky", backgroundColor: "#0E0E0E" }}
-                elevation="0"
+                sx={{
+                    position: "sticky",
+                    backgroundColor: "#121212",
+                    padding: ["2rem 0 1.5rem", "2rem 0 0"],
+                }}
+                elevation={0}
             >
                 <Container>
                     <Toolbar
@@ -34,6 +39,22 @@ export default function Navbar({ theme }) {
                             justifyContent: "space-between",
                         }}
                     >
+                        <Box
+                            sx={{
+                                paddingRight: ["0", "2rem", "0"],
+                                display: { md: "none" },
+                            }}
+                        >
+                            <IconButton
+                                sx={{
+                                    color: "#fff",
+                                }}
+                                aria-label="open navigation menu"
+                                size="medium"
+                            >
+                                <MenuIcon fontSize="inherit" />
+                            </IconButton>
+                        </Box>
                         <MuiLink
                             component={Link}
                             href="/"
@@ -41,24 +62,28 @@ export default function Navbar({ theme }) {
                             sx={{
                                 color: "#fff",
                                 "&:hover": { color: "#D87D4A" },
+                                marginRight: ["0", "auto", "0"],
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
                             }}
-                            variant="h3"
                         >
-                            audiophile
+                            <Image src={logo} alt="audiophile logo"></Image>
                         </MuiLink>
-                        <List>
+
+                        <List sx={{ display: ["none", "none", "inline"] }}>
                             {links.map((link, index) => (
                                 <MuiLink
                                     component={Link}
                                     key={index}
                                     href={link !== "home" ? link : "/"}
+                                    variant="body2"
                                     sx={{
                                         color: "#fff",
                                         padding: "0px 1rem",
                                         "&:hover": { color: "#D87D4A" },
                                     }}
                                     underline="none"
-                                    variant="body1"
                                 >
                                     {link.toUpperCase()}
                                 </MuiLink>
@@ -76,11 +101,23 @@ export default function Navbar({ theme }) {
                             <ShoppingCartOutlinedIcon fontSize="inherit" />
                         </IconButton>
                     </Toolbar>
+                    <Box
+                        sx={{
+                            margin: ["0", "0 1.5rem"],
+                            padding: ["0", "1.5rem 0 0"],
+
+                            borderBottom: "solid 1px #2b2b2b",
+                            display: ["none", "block"],
+                        }}
+                    ></Box>
                 </Container>
             </AppBar>
-            <Container>
-                <Divider color="#fff"></Divider>
-            </Container>
+            <Box
+                sx={{
+                    borderTop: "solid 1px #2b2b2b",
+                    display: ["block", "none"],
+                }}
+            ></Box>
         </>
     );
 }
