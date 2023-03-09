@@ -1,46 +1,5 @@
 import Head from "next/head";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Manrope } from "next/font/google";
-import { ThemeProvider, CssBaseline } from "@mui/material";
-import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-const manrope = Manrope({ subsets: ["latin"] });
-let theme = createTheme({
-    typography: {
-        fontFamily: manrope.style.fontFamily,
-        body1: {
-            fontSize: 15,
-            fontWeight: 500,
-        },
-        h1: {
-            fontWeight: 700,
-            fontSize: 56,
-        },
-        h2: {
-            fontSize: 39,
-            fontWeight: 700,
-        },
-        h3: {
-            fontSize: 32,
-            fontWeight: 700,
-        },
-        h4: {
-            fontSize: 28,
-            fontWeight: 700,
-        },
-        h5: {
-            fontSize: 24,
-            fontWeight: 700,
-        },
-        h6: {
-            fontSize: 18,
-            fontWeight: 700,
-        },
-    },
-});
-theme = responsiveFontSizes(theme);
-console.log(theme);
 export default function Home() {
     return (
         <>
@@ -56,13 +15,7 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <ThemeProvider theme={theme}>
-                <CssBaseline>
-                    <Navbar theme={theme} />
-                    <h1>hinga dinga durgen</h1>
-                    <Footer />
-                </CssBaseline>
-            </ThemeProvider>
+            <div>home</div>
         </>
     );
 }
