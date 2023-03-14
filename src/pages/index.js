@@ -1,7 +1,36 @@
 import Head from "next/head";
-import Menu from "@/components/Menu"
+import BestAudio from "@/components/BestAudio";
+import ProductStack from "@/components/home/ProductStack";
+import { createClient } from "contentful";
 
-export default function Home() {
+export async function getStaticProps() {
+    console.log("Executing getStaticProps");
+    const client = createClient({
+        space: process.env.SPACE_ID,
+        accessToken: process.env.CONTENT_DELIVERY_TOKEN,
+    });
+
+    let assets = {};
+
+    try {
+        const [desktop, tablet, mobile] = await Promise.all([
+            client.getAsset("3uIGgrCDgySKW5tljIfncv"),
+            client.getAsset("1nkmfthd1HXMIFxqpxrbya"),
+            client.getAsset("2DTUz7xbHLnQqDxbygtRWA"),
+        ]);
+        assets = { desktop, tablet, mobile };
+        console.log("BestAudio assets loaded successfully");
+        // console.log("Assets loaded successfully:", assets);
+    } catch (error) {
+        console.log("Error loading BestAudio assets");
+
+        // console.log("Error loading assets:", error);
+    }
+
+    return { props: { assets } };
+}
+
+export default function Home({ assets }) {
     return (
         <>
             <Head>
@@ -17,8 +46,8 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div>home</div>
-            <Menu></Menu>
-            
+            <ProductStack></ProductStack>
+            <BestAudio src={assets} />
         </>
     );
 }
