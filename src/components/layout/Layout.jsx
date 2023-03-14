@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Cart from "@/components/Cart"
 
 import logo from "/public/shared-desktop-logo.svg";
 import { ThemeProvider, CssBaseline } from "@mui/material";
@@ -24,7 +23,6 @@ export default function Layout({ children }) {
                     <Box component="main" sx={{ flexGrow: 1 }}>
                         {children}
                     </Box>
-                    <Cart></Cart>
                     <Footer logo={logo} />
                 </Box>
             </CssBaseline>
