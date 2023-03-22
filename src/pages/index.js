@@ -1,36 +1,46 @@
 import Head from "next/head";
-import BestAudio from "@/components/BestAudio";
-import ProductStack from "@/components/home/ProductStack";
+import ProductStack from "@/components/index/ProductStack";
+import BestAudio from "@/components/layout/BestAudio";
 import { createClient } from "contentful";
 
 export async function getStaticProps() {
     console.log("Executing getStaticProps");
+
     const client = createClient({
         space: process.env.SPACE_ID,
         accessToken: process.env.CONTENT_DELIVERY_TOKEN,
     });
 
+    let imgURLs = {};
     let assets = {};
 
     try {
+        await client
+            .getAssets({limit: 1000})
+            .then((response) => {
+                assets = response.items;
+            })
+            .catch(console.error);
+
+            //
         const [desktop, tablet, mobile] = await Promise.all([
+            //BestAudio images
             client.getAsset("3uIGgrCDgySKW5tljIfncv"),
             client.getAsset("1nkmfthd1HXMIFxqpxrbya"),
             client.getAsset("2DTUz7xbHLnQqDxbygtRWA"),
         ]);
-        assets = { desktop, tablet, mobile };
-        console.log("BestAudio assets loaded successfully");
-        // console.log("Assets loaded successfully:", assets);
-    } catch (error) {
-        console.log("Error loading BestAudio assets");
 
-        // console.log("Error loading assets:", error);
+        imgURLs = { desktop, tablet, mobile };
+        console.log("BestAudio assets loaded successfully");
+    } catch (error) {
+        console.error("Error loading BestAudio assets");
     }
 
-    return { props: { assets } };
+    return { props: { imgURLs, assets } };
 }
 
-export default function Home({ assets }) {
+export default function Home({ imgURLs, assets }) {
+    // console.log(assets);
     return (
         <>
             <Head>
@@ -46,8 +56,8 @@ export default function Home({ assets }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div>home</div>
-            <ProductStack></ProductStack>
-            <BestAudio src={assets} />
+            <ProductStack assets={assets}/>
+            <BestAudio imgURLs={imgURLs} />
         </>
     );
 }
