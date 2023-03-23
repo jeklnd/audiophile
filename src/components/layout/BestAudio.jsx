@@ -27,7 +27,7 @@ export default function BestAudioGear({ imgURLs }) {
                             srcSet={`https:${imgURLs.tablet.fields.file.url}`}
                         ></source>
                         <source
-                            media="(max-width: 1200px)"
+                            media="(min-width: 900px)"
                             srcSet={`https:${imgURLs.desktop.fields.file.url}`}
                         ></source>
                         <img
