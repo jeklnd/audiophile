@@ -15,23 +15,23 @@ import { ThemeProvider, CssBaseline } from "@mui/material";
 import { theme } from "@/styles/theme";
 
 export default function Layout({ children }) {
-    return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        minHeight: "100vh",
-                    }}
-                >
-                    <Navbar logo={logo} />
-                    <Box component="main" sx={{ flexGrow: 1 }}>
-                        {children}
-                    </Box>
-                    <Footer logo={logo} />
-                </Box>
-            </CssBaseline>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
+          <Navbar logo={logo} />
+          <Box component="main" sx={{ flexGrow: 1 }}>
+            {children}
+          </Box>
+          <Footer logo={logo} />
+        </Box>
+      </CssBaseline>
+    </ThemeProvider>
+  );
 }
