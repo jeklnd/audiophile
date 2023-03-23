@@ -1,0 +1,35 @@
+.contained {
+  width: 160px;
+  height: 48px;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #000;
+}
+
+.contained:hover {
+  background-color: #4c4c4c;
+  box-shadow: none;
+}
+
+.outlined {
+  width: 160px;
+  height: 48px;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  color: #000;
+  border-color: #000;
+}
+
+.outlined:hover {
+  background-color: #000;
+  color: #fff;
+  box-shadow: none;
+  border-color: #000;
+}
+
+.imgWrapper {
+  position: relative;
+  width: 90%;
+  height: 90%;
+}
