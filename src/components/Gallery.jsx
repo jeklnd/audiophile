@@ -68,6 +68,7 @@ export default function Gallery({ assets }) {
                         src={`https:${category.img}`}
                         alt=""
                         fill
+                        priority
                         sizes="(min-width: 0px) 10vw"
                         style={{ objectFit: "contain" }}
                       ></Image>
