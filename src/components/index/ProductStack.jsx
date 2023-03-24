@@ -53,7 +53,7 @@ export default function ProductStack({ assets }) {
 
   return (
     <Container>
-      <Grid container>
+      <Grid container sx={{ margin: ["7.5rem 0", "6rem 0", "12.5rem 0"] }}>
         <Grid
           item
           xs={12}
@@ -87,7 +87,6 @@ export default function ProductStack({ assets }) {
                   fill
                   style={{
                     objectFit: "cover",
-                    // objectPosition: desktop && "50% 50%",
                   }}
                 ></Image>
 
