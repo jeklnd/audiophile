@@ -6,42 +6,24 @@ import ProductStack from "@/components/index/ProductStack";
 import BestAudio from "@/components/layout/BestAudio";
 
 export async function getStaticProps() {
-  console.log("Executing getStaticProps");
-
   const client = createClient({
     space: process.env.SPACE_ID,
     accessToken: process.env.CONTENT_DELIVERY_TOKEN,
   });
 
-  let imgURLs = {};
   let assets = {};
 
-  try {
-    await client
-      .getAssets({ limit: 1000 })
-      .then((response) => {
-        assets = response.items;
-      })
-      .catch(console.error);
+  await client
+    .getAssets({ limit: 1000 })
+    .then((response) => {
+      assets = response.items;
+    })
+    .catch(console.error);
 
-    //
-    const [desktop, tablet, mobile] = await Promise.all([
-      //BestAudio images
-      client.getAsset("3uIGgrCDgySKW5tljIfncv"),
-      client.getAsset("1nkmfthd1HXMIFxqpxrbya"),
-      client.getAsset("2DTUz7xbHLnQqDxbygtRWA"),
-    ]);
-
-    imgURLs = { desktop, tablet, mobile };
-    console.log("BestAudio assets loaded successfully");
-  } catch (error) {
-    console.error("Error loading BestAudio assets");
-  }
-
-  return { props: { imgURLs, assets } };
+  return { props: { assets } };
 }
 
-export default function Home({ imgURLs, assets }) {
+export default function Home({ assets }) {
   // console.log(assets);
   return (
     <>
@@ -51,10 +33,10 @@ export default function Home({ imgURLs, assets }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero assets={assets}></Hero>
+      <Hero assets={assets} />
       <Gallery assets={assets} />
       <ProductStack assets={assets} />
-      <BestAudio imgURLs={imgURLs} />
+      <BestAudio assets={assets} />
     </>
   );
 }
