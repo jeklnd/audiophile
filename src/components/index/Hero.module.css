@@ -1,0 +1,12 @@
+.contained {
+  width: 160px;
+  height: 48px;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #d87d4a;
+}
+
+.contained:hover {
+  background-color: #fbaf85;
+  box-shadow: none;
+}
