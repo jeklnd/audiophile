@@ -25,7 +25,7 @@ export default function Navbar({ logo }) {
             <AppBar
                 sx={{
                     position: "sticky",
-                    backgroundColor: "#121212",
+                    backgroundColor: ["#0f0f0f", "#0f0f0f", "#141414"],
                     padding: ["2rem 0 1.5rem", "2rem 0 0"],
                 }}
                 elevation={0}
