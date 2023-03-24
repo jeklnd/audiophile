@@ -8,7 +8,7 @@ import { createClient } from "contentful";
 
 // getStaticProps MUST be exported from a page
 export async function getStaticProps() {
-    console.log("Executing getStaticProps");
+    // console.log("Executing getStaticProps");
     const client = createClient({
         space: process.env.SPACE_ID,
         accessToken: process.env.CONTENT_DELIVERY_TOKEN,
@@ -21,7 +21,7 @@ export async function getStaticProps() {
     const asset = await client
         .getAsset("ewhUS2iIOihTjxFIoA4kB")
         .then((asset) => {
-            console.log(asset.fields.file.details.image);
+            // console.log(asset.fields.file.details.image);
             fileUrl = `https:${asset.fields.file.url}`;
             width = asset.fields.file.details.image.width;
             height = asset.fields.file.details.image.height;
