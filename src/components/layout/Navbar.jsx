@@ -96,9 +96,13 @@ export default function Navbar({ logo }) {
               aria-label="open shopping cart"
               size="medium"
             >
-              {/* <MuiLink component={Link} href={"/checkout"} sx={{all: "inherit"}}> */}
-              <ShoppingCartOutlinedIcon fontSize="inherit" />
-              {/* </MuiLink> */}
+              <MuiLink
+                component={Link}
+                href={"/checkout"}
+                sx={{ all: "inherit" }}
+              >
+                <ShoppingCartOutlinedIcon fontSize="inherit" />
+              </MuiLink>
             </IconButton>
           </Toolbar>
           <Box
