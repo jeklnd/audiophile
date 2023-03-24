@@ -1,8 +1,9 @@
+import { createClient } from "contentful";
 import Head from "next/head";
+import Hero from "@/components/index/Hero";
+import Gallery from "@/components/Gallery";
 import ProductStack from "@/components/index/ProductStack";
 import BestAudio from "@/components/layout/BestAudio";
-import Gallery from "@/components/Gallery";
-import { createClient } from "contentful";
 
 export async function getStaticProps() {
   console.log("Executing getStaticProps");
@@ -50,7 +51,7 @@ export default function Home({ imgURLs, assets }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>home</div>
+      <Hero assets={assets}></Hero>
       <Gallery assets={assets} />
       <ProductStack assets={assets} />
       <BestAudio imgURLs={imgURLs} />
