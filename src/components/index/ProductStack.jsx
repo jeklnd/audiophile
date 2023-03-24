@@ -23,7 +23,7 @@ export default function ProductStack({ assets }) {
   const findAssetById = (assets, id) => assets.find((obj) => obj.sys.id === id);
 
   const images = {
-    zx9: "1dsQVjFiE15nI4WAkfb3pg",
+    zx9: "17F921vkUMSfJo2KFqu1ji",
     circles: "2KUP6gcPMQTOA3mTQjgV3C",
     zx7Mobile: "6bGVx73n8QOphzxziKHe7H",
     zx7Tablet: "1NqO9HMRJIbuzRagu0n61R",
@@ -59,7 +59,10 @@ export default function ProductStack({ assets }) {
           xs={12}
           sx={{
             backgroundColor: "#d87d4a",
-            backgroundImage: circles.src,
+            backgroundImage: `url(https:${circles.fields.file.url})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: ["10% 100%", "10% 50%", "10% 100%"],
+            backgroundSize: "cover",
             borderRadius: "8px",
             marginBottom: ["1.5rem", "2rem"],
           }}
@@ -68,56 +71,63 @@ export default function ProductStack({ assets }) {
             elevation={0}
             sx={{ border: "none", backgroundColor: "transparent" }}
           >
-            <CardContent
+            <Grid
+              container
               sx={{
                 color: "#fff",
                 textAlign: "center",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: ["column", "column", "row"],
-                height: "560px",
+                flexDirection: "row",
                 position: "relative",
+                gap: ["3rem", "3rem", "5rem"],
+                padding: ["3.5rem 0", "3.5rem 0", "2rem 0"]
               }}
             >
-              <Box className={styles.imgWrapper}>
-                <Image
-                  src={circles.fields.file.url}
-                  alt=""
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                ></Image>
-
+              <Grid
+                item
+                xs={12}
+                md={4}
+                sx={{
+                  position: "relative",
+                  height: ["200px", "200px", "450px"],
+                }}
+              >
                 <Image
                   src={`https:${zx9.fields.file.url}`}
                   alt="zx9 headphones image"
                   fill
                   style={{
-                    objectFit: md ? "contain" : "cover",
+                    objectFit: "contain",
+                    top: lg ? "2.75rem" : 0,
                   }}
                 />
-              </Box>
-              <Stack
-                spacing={3}
-                sx={{
-                  paddingBottom: ["1.5rem", "2.5rem"],
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography variant="h1">ZX9 SPEAKER</Typography>
-                <Typography>
-                  Upgrade to premium speakers that are phenomenally built to
-                  deliver truly remarkable sound.
-                </Typography>
-                <Button variant="contained" className={styles.contained}>
-                  SEE PRODUCT
-                </Button>
-              </Stack>
-            </CardContent>
+              </Grid>
+              <Grid item xs={8} sm={6} md={5}>
+                <Stack
+                  spacing={3}
+                  sx={{
+                    display: "flex",
+                    alignItems: ["center", "center", "flex-start"],
+                  }}
+                >
+                  <Typography variant="h1">ZX9 SPEAKER</Typography>
+                  <Typography
+                    sx={{
+                      color: "#f5ded2",
+                      textAlign: ["center", "center", "left"],
+                    }}
+                  >
+                    Upgrade to premium speakers that are phenomenally built to
+                    deliver truly remarkable sound.
+                  </Typography>
+                  <Button variant="contained" className={styles.contained}>
+                    SEE PRODUCT
+                  </Button>
+                </Stack>
+              </Grid>
+            </Grid>
           </Card>
         </Grid>
         <Grid item xs={12} sx={{ marginBottom: ["1.5rem", "2rem"] }}>
