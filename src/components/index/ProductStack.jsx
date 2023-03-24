@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Image from "next/image";
-import styles from "./ProductStack.module.css";
 
 import zx9 from "public/assets/home/desktop/home-desktop-speaker-zx9.png";
 import yx1 from "public/assets/home/desktop/home-desktop-earphones-yx1.jpg";
@@ -82,7 +81,7 @@ export default function ProductStack({ assets }) {
                 flexDirection: "row",
                 position: "relative",
                 gap: ["3rem", "3rem", "5rem"],
-                padding: ["3.5rem 0", "3.5rem 0", "2rem 0"]
+                padding: ["3.5rem 0", "3.5rem 0", "2rem 0"],
               }}
             >
               <Grid
@@ -122,7 +121,20 @@ export default function ProductStack({ assets }) {
                     Upgrade to premium speakers that are phenomenally built to
                     deliver truly remarkable sound.
                   </Typography>
-                  <Button variant="contained" className={styles.contained}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      width: "160px",
+                      height: "48px",
+                      borderRadius: 0,
+                      boxShadow: "none",
+                      backgroundColor: "#000",
+                      "&:hover": {
+                        backgroundColor: "#4c4c4c",
+                        boxShadow: "none",
+                      },
+                    }}
+                  >
                     SEE PRODUCT
                   </Button>
                 </Stack>
@@ -164,7 +176,24 @@ export default function ProductStack({ assets }) {
               }}
             >
               <Typography variant="h4">ZX7 SPEAKER</Typography>
-              <Button variant="outlined" className={styles.outlined}>
+              <Button
+                variant="outlined"
+                sx={{
+                  width: "160px",
+                  height: "48px",
+                  borderRadius: 0,
+                  boxShadow: "none",
+                  backgroundColor: "transparent",
+                  color: "#000",
+                  borderColor: "#000",
+                  "&:hover": {
+                    backgroundColor: "#000",
+                    color: "#fff",
+                    boxShadow: "none",
+                    borderColor: "#000",
+                  },
+                }}
+              >
                 SEE PRODUCT
               </Button>
             </CardContent>
@@ -215,7 +244,24 @@ export default function ProductStack({ assets }) {
               }}
             >
               <Typography variant="h4">YX1 EARPHONES</Typography>
-              <Button variant="outlined" className={styles.outlined}>
+              <Button
+                variant="outlined"
+                sx={{
+                  width: "160px",
+                  height: "48px",
+                  borderRadius: 0,
+                  boxShadow: "none",
+                  backgroundColor: "transparent",
+                  color: "#000",
+                  borderColor: "#000",
+                  "&:hover": {
+                    backgroundColor: "#000",
+                    color: "#fff",
+                    boxShadow: "none",
+                    borderColor: "#000",
+                  },
+                }}
+              >
                 SEE PRODUCT
               </Button>
             </Box>

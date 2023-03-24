@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography, Button, Container, Box, Grid } from "@mui/material";
 import Image from "next/image";
-import styles from "./Hero.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Hero({ assets }) {
@@ -85,8 +84,16 @@ export default function Hero({ assets }) {
             </Typography>
             <Button
               variant="contained"
-              className={styles.contained}
-              sx={{ marginTop: "14px" }}
+              // className={styles.contained}
+              sx={{
+                marginTop: "14px",
+                width: "160px",
+                height: "48px",
+                borderRadius: 0,
+                boxShadow: "none",
+                backgroundColor: "#d87d4a",
+                "&:hover": { backgroundColor: "#fbaf85", boxShadow: "none" },
+              }}
             >
               SEE PRODUCT
             </Button>
