@@ -49,6 +49,7 @@ export default function Gallery({ assets }) {
                       },
                     },
                   }}
+                  href={`/${category.title}`}
                 >
                   <CardContent
                     sx={{
