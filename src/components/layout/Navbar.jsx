@@ -74,7 +74,7 @@ export default function Navbar({ logo }) {
                 <MuiLink
                   component={Link}
                   key={index}
-                  href={link === "home" ? "/" : `${link}`}
+                  href={link === "home" ? "/" : `/${link}`}
                   variant="body2"
                   sx={{
                     color: "#fff",
