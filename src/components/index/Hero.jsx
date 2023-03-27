@@ -84,7 +84,6 @@ export default function Hero({ assets }) {
             </Typography>
             <Button
               variant="contained"
-              // className={styles.contained}
               sx={{
                 marginTop: "14px",
                 width: "160px",
@@ -94,6 +93,7 @@ export default function Hero({ assets }) {
                 backgroundColor: "#d87d4a",
                 "&:hover": { backgroundColor: "#fbaf85", boxShadow: "none" },
               }}
+              href={"/headphones/xx99-mark-ii-headphones"}
             >
               SEE PRODUCT
             </Button>
