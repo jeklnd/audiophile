@@ -134,6 +134,7 @@ export default function ProductStack({ assets }) {
                         boxShadow: "none",
                       },
                     }}
+                    href={"/speakers/zx9-speaker"}
                   >
                     SEE PRODUCT
                   </Button>
@@ -193,6 +194,8 @@ export default function ProductStack({ assets }) {
                     borderColor: "#000",
                   },
                 }}
+                href={"/speakers/zx7-speaker"}
+
               >
                 SEE PRODUCT
               </Button>
@@ -261,6 +264,8 @@ export default function ProductStack({ assets }) {
                     borderColor: "#000",
                   },
                 }}
+                href={"/earphones/yx1-wireless-earphones"}
+
               >
                 SEE PRODUCT
               </Button>
