@@ -8,7 +8,7 @@ export default function BestAudioGear({ assets }) {
   const findAssetById = (assets, id) => assets.find((obj) => obj.sys.id === id);
 
   const images = {
-    mobile: "1n1RklAFH3OBtIo6dD6aEe",
+    mobile: "2DTUz7xbHLnQqDxbygtRWA",
     tablet: "1nkmfthd1HXMIFxqpxrbya",
     desktop: "2DTUz7xbHLnQqDxbygtRWA",
   };
@@ -22,7 +22,7 @@ export default function BestAudioGear({ assets }) {
         container
         rowGap={{ xs: "2.5rem", sm: "4rem", md: 0 }}
         sx={{
-          margin: ["7.5rem 0", "6rem 0", "12.5rem 0"],
+          margin: ["7.5rem 0", "7.5rem 0", "10rem 0"],
           justifyContent: { md: "space-between" },
           textAlign: ["center", "center", "left"],
         }}
