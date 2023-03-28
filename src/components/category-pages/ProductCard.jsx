@@ -57,6 +57,10 @@ export default function ProductCard({ products, category }) {
                           src={`https:${product.fields.mainProductImage.fields.file.url}`}
                           alt={`${product.fields.name} image`}
                           fill
+                          sizes="(max-width: 600px) 100vw,
+                          (max-width: 900px) 100vw,
+                          50vw"
+                          priority={`${index === 0}`}
                           style={{ objectFit: "contain" }}
                         ></Image>
                       </Box>

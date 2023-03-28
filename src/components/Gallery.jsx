@@ -70,7 +70,8 @@ export default function Gallery({ assets }) {
                         alt=""
                         fill
                         priority
-                        sizes="(min-width: 0px) 10vw"
+                        sizes="(max-width: 600px) 100vw,
+                        33vw"
                         style={{ objectFit: "contain" }}
                       ></Image>
                     </Box>

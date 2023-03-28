@@ -110,6 +110,9 @@ export default function Hero({ assets }) {
                 src={`https:${xx99ii.fields.file.url}`}
                 alt="xx99 Mark II headphones"
                 fill
+                sizes="(max-width: 600px) 100vw,
+                (max-width: 900px) 100vw,
+                50vw"
                 priority
                 style={{ objectFit: "contain" }}
                 // height="618"

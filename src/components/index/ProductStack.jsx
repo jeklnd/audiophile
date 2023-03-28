@@ -97,6 +97,9 @@ export default function ProductStack({ assets }) {
                   src={`https:${zx9.fields.file.url}`}
                   alt="zx9 headphones image"
                   fill
+                  sizes="(max-width: 600px) 100vw,
+                  (max-width: 900px) 100vw,
+                  50vw"
                   style={{
                     objectFit: "contain",
                     top: lg ? "2.75rem" : 0,
