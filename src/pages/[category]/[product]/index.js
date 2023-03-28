@@ -1,4 +1,5 @@
 import BestAudio from "@/components/layout/BestAudio.jsx";
+import YouMayAlsoLike from "@/components/product-pages/YouMayAlsoLike";
 import Gallery from "@/components/Gallery.jsx";
 import { createClient } from "contentful";
 import {
@@ -117,7 +118,11 @@ export default function Product({ assets, slugs }) {
               src={mainProductImage}
               alt="product image"
               fill
+              sizes="(max-width: 600px) 100vw,
+              (max-width: 900px) 100vw,
+              50vw"
               style={{ objectFit: "contain" }}
+              priority
             ></Image>
           </Box>
         </Grid>
@@ -304,6 +309,7 @@ export default function Product({ assets, slugs }) {
                 src={galleryImage1}
                 alt="product image"
                 fill
+                sizes="(max-width: 600px) 100vw, 29vw"
                 style={{ objectFit: "cover", borderRadius: "8px" }}
               ></Image>
             </Box>
@@ -319,6 +325,8 @@ export default function Product({ assets, slugs }) {
                 src={galleryImage2}
                 alt="product image"
                 fill
+                sizes="(max-width: 600px) 100vw, 29vw"
+
                 style={{ objectFit: "cover", borderRadius: "8px" }}
               ></Image>
             </Box>
@@ -336,12 +344,15 @@ export default function Product({ assets, slugs }) {
                 src={galleryImage3}
                 alt="product image"
                 fill
+                sizes="(max-width: 600px) 100vw, 71vw"
+
                 style={{ objectFit: "cover", borderRadius: "8px" }}
               ></Image>
             </Box>
           </Grid>
         </Grid>
       </Grid>
+      <YouMayAlsoLike assets={slugs} />
       <Gallery assets={assets} />
       <BestAudio assets={assets} />
     </Container>
