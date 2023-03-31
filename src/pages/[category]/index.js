@@ -5,6 +5,7 @@ import { createClient } from "contentful";
 import { Box, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import ProductCard from "@/components/category-pages/ProductCard";
+import Head from "next/head"
 
 export async function getStaticPaths() {
   return {
@@ -63,10 +64,15 @@ export async function getStaticProps() {
 export default function Product({ assets, headphones, speakers, earphones }) {
   const router = useRouter();
   const { category } = router.query;
-  // console.log(category);
+  const title = `${category.charAt(0).toUpperCase()}${category.slice(1)}`
+  console.log(title)
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={category.toUpperCase()} />
+      </Head>
       <Box
         sx={{
           backgroundColor: ["#0f0f0f", "#0f0f0f", "#141414"],
