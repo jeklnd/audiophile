@@ -90,7 +90,6 @@ export default function Product({ assets, slugs }) {
   const inTheBox = product.fields.boxItemsObject.items;
 
   //   console.log(inTheBox);
-  console.log(product.fields.name)
 
   return (
     <>
