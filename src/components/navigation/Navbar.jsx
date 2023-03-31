@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AppBar,
   Container,
@@ -6,16 +5,12 @@ import {
   Link as MuiLink,
   List,
   IconButton,
-  Drawer,
-  Backdrop,
-  Dialog,
-  Divider,
   Box,
 } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MenuIcon from "@mui/icons-material/Menu";
+import NavMenuIcon from "@/components/navigation/NavMenuIcon";
 
 export default function Navbar({ logo }) {
   const links = ["home", "headphones", "speakers", "earphones"];
@@ -37,22 +32,7 @@ export default function Navbar({ logo }) {
               justifyContent: "space-between",
             }}
           >
-            <Box
-              sx={{
-                paddingRight: ["0", "2rem", "0"],
-                display: { md: "none" },
-              }}
-            >
-              <IconButton
-                sx={{
-                  color: "#fff",
-                }}
-                aria-label="open navigation menu"
-                size="medium"
-              >
-                <MenuIcon fontSize="inherit" />
-              </IconButton>
-            </Box>
+            <NavMenuIcon />
             <MuiLink
               component={Link}
               href="/"

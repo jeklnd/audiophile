@@ -6,10 +6,8 @@
  */
 
 import { Box } from "@mui/material";
-
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/layout/Footer";
-
 import logo from "/public/shared-desktop-logo.svg";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { theme } from "@/styles/theme";
