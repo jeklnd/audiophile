@@ -65,7 +65,7 @@ export default function Product({ assets, headphones, speakers, earphones }) {
   const router = useRouter();
   const { category } = router.query;
   const title = `${category.charAt(0).toUpperCase()}${category.slice(1)}`
-  console.log(title)
+  // console.log(title)
 
   return (
     <>
