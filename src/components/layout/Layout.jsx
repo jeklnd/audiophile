@@ -23,7 +23,6 @@ export default function Layout({ children }) {
             minHeight: "100vh",
           }}
         >
-          <Navbar logo={logo} />
           <Box component="main" sx={{ flexGrow: 1 }}>
             {children}
           </Box>
