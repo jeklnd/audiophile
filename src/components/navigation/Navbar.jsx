@@ -11,9 +11,15 @@ import Link from "next/link";
 import Image from "next/image";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NavMenuIcon from "@/components/navigation/NavMenuIcon";
+import NavDrawer from "./NavDrawer";
+import { useState } from "react";
 
-export default function Navbar({ logo }) {
+export default function Navbar({ logo, assets }) {
   const links = ["home", "headphones", "speakers", "earphones"];
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -32,7 +38,7 @@ export default function Navbar({ logo }) {
               justifyContent: "space-between",
             }}
           >
-            <NavMenuIcon />
+            <NavMenuIcon onToggle={handleClick} isOpen={isOpen} />
             <MuiLink
               component={Link}
               href="/"
@@ -102,6 +108,7 @@ export default function Navbar({ logo }) {
           display: ["block", "none"],
         }}
       ></Box>
+      <NavDrawer assets={assets} isOpen={isOpen}></NavDrawer>
     </>
   );
 }
