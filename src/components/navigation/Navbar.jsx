@@ -28,6 +28,7 @@ export default function Navbar({ logo, assets }) {
           position: "sticky",
           backgroundColor: ["#0f0f0f", "#0f0f0f", "#141414"],
           padding: ["2rem 0 1.5rem", "2rem 0 0"],
+          zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
         elevation={0}
       >
@@ -108,7 +109,11 @@ export default function Navbar({ logo, assets }) {
           display: ["block", "none"],
         }}
       ></Box>
-      <NavDrawer assets={assets} isOpen={isOpen}></NavDrawer>
+      <NavDrawer
+        assets={assets}
+        onClick={handleClick}
+        isOpen={isOpen}
+      ></NavDrawer>
     </>
   );
 }
