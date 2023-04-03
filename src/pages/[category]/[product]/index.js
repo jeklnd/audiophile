@@ -16,6 +16,9 @@ import {
 import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Navbar from "@/components/navigation/Navbar";
+import logo from "/public/shared-desktop-logo.svg";
+
 
 export async function getStaticPaths() {
   let slugs = {};
@@ -97,6 +100,7 @@ export default function Product({ assets, slugs }) {
         <title>{name}</title>
         <meta name="description" content={description}/>
       </Head>
+      <Navbar logo={logo} assets={assets}></Navbar>
       <Container>
         <Grid container>
           <Grid item xs={12}>

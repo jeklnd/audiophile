@@ -6,6 +6,9 @@ import { Box, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import ProductCard from "@/components/category-pages/ProductCard";
 import Head from "next/head"
+import Navbar from "@/components/navigation/Navbar";
+import logo from "/public/shared-desktop-logo.svg";
+
 
 export async function getStaticPaths() {
   return {
@@ -73,6 +76,7 @@ export default function Product({ assets, headphones, speakers, earphones }) {
         <title>{title}</title>
         <meta name="description" content={category.toUpperCase()} />
       </Head>
+      <Navbar logo={logo} assets={assets}></Navbar>
       <Box
         sx={{
           backgroundColor: ["#0f0f0f", "#0f0f0f", "#141414"],

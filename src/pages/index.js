@@ -4,6 +4,9 @@ import Hero from "@/components/index/Hero";
 import Gallery from "@/components/Gallery";
 import ProductStack from "@/components/index/ProductStack";
 import BestAudio from "@/components/layout/BestAudio";
+import Navbar from "@/components/navigation/Navbar";
+import logo from "/public/shared-desktop-logo.svg";
+
 
 export async function getStaticProps() {
   const client = createClient({
@@ -33,6 +36,7 @@ export default function Home({ assets }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar logo={logo} assets={assets}></Navbar>
       <Hero assets={assets} />
       <Gallery assets={assets} />
       <ProductStack assets={assets} />
