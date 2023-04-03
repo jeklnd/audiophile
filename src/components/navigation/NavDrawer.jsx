@@ -13,7 +13,7 @@ export default function NavDrawer({ assets, onClick, isOpen }) {
               width: "100%",
               backgroundColor: "#ffffff",
               padding: ["1rem 0 2rem", "3rem 0 4rem"],
-              position: "absolute",
+              position: "fixed",
               zIndex: theme.zIndex.drawer,
             }}
             role="presentation"
