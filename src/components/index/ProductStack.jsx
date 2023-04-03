@@ -13,11 +13,6 @@ import {
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Image from "next/image";
 
-import zx9 from "public/assets/home/desktop/home-desktop-speaker-zx9.png";
-import yx1 from "public/assets/home/desktop/home-desktop-earphones-yx1.jpg";
-import testJawn from "public/assets/product-zx9-speaker/desktop/product-zx9-speaker-desktop-product-removebg-preview.png";
-import testJawn2 from "public/assets/product-zx9-speaker/desktop/product-zx9-speaker-desktop-product.png";
-
 export default function ProductStack({ assets }) {
   const findAssetById = (assets, id) => assets.find((obj) => obj.sys.id === id);
 
