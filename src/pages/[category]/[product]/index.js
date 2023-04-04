@@ -17,8 +17,9 @@ import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "@/components/navigation/Navbar";
-import Footer from "@/components/layout/Footer"
+import Footer from "@/components/layout/Footer";
 import logo from "/public/shared-desktop-logo.svg";
+import GoBack from "@/components/checkout/GoBack";
 
 export async function getStaticPaths() {
   let slugs = {};
@@ -104,15 +105,13 @@ export default function Product({ assets, slugs }) {
       <Container>
         <Grid container>
           <Grid item xs={12}>
-            <Typography
-              variant="body1"
+            <Box
               sx={{
-                color: "#7d7d7d",
                 margin: ["1rem 0 1.5rem", "2rem 0 1.5rem", "5rem 0 3.5rem"],
               }}
             >
-              Go Back
-            </Typography>
+              <GoBack></GoBack>
+            </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Box
