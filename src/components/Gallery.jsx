@@ -33,13 +33,13 @@ export default function Gallery({ assets }) {
   ];
 
   return (
-    <Container sx={{marginTop: "1rem"}}>
+    <Container sx={{ marginTop: "1rem" }}>
       <Grid container spacing={2}>
         {categories.map((category, index) => {
           return (
             <Grid key={index} item xs={12} sm={4}>
               <Card elevation={0}>
-                <CardHeader sx={{ height: "80px" }}></CardHeader>
+                <CardHeader sx={{ height: ["40px", "80px"] }}></CardHeader>
                 <CardActionArea
                   sx={{
                     borderRadius: "8px",
@@ -54,15 +54,15 @@ export default function Gallery({ assets }) {
                   <CardContent
                     sx={{
                       backgroundColor: "#f1f1f1",
-                      height: ["165px", "165px", "204px"],
+                      height: ["110px", "165px", "204px"],
                       borderRadius: "8px",
                     }}
                   >
                     <Box
                       sx={{
                         position: "relative",
-                        height: ["120px", "120px", "150px"],
-                        top: "-80px",
+                        height: ["60px", "120px", "150px"],
+                        top: ["-50px", "-80px"],
                       }}
                     >
                       <Image
@@ -78,10 +78,10 @@ export default function Gallery({ assets }) {
                     <Box
                       sx={{
                         position: "relative",
-                        top: ["-3.5rem", "-3.75rem", "-3.5rem"],
+                        top: ["-2.5rem", "-3.75rem", "-3.5rem"],
                         display: "flex",
                         flexDirection: "column",
-                        gap: "1rem",
+                        gap: ["0.75rem", "1rem"],
                       }}
                     >
                       <Typography
@@ -101,7 +101,7 @@ export default function Gallery({ assets }) {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          gap: "0.75rem",
+                          gap: ["0.5rem", "0.75rem"],
                         }}
                         className="shop"
                       >
