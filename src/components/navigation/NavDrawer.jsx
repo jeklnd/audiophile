@@ -5,15 +5,16 @@ import { theme } from "@/styles/theme";
 
 export default function NavDrawer({ assets, onClick, isOpen }) {
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
+    <>
+      <AnimatePresence>
+        {isOpen && (
           <Box
             sx={{
               width: "100%",
               backgroundColor: "#ffffff",
               padding: ["1rem 0 2rem", "3rem 0 4rem"],
               position: "fixed",
+              top: ["112px", "120px"],
               zIndex: theme.zIndex.drawer,
             }}
             role="presentation"
@@ -27,13 +28,15 @@ export default function NavDrawer({ assets, onClick, isOpen }) {
           >
             <Gallery assets={assets}></Gallery>
           </Box>
-          <Backdrop
-            sx={{ color: "#000", zIndex: (theme) => theme.zIndex.drawer - 1 }}
-            open={isOpen}
-            onClick={onClick}
-          />
-        </>
+        )}
+      </AnimatePresence>
+      {isOpen && (
+        <Backdrop
+          sx={{ color: "#000", zIndex: (theme) => theme.zIndex.drawer - 1 }}
+          open={isOpen}
+          onClick={onClick}
+        />
       )}
-    </AnimatePresence>
+    </>
   );
 }
