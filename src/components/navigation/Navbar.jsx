@@ -109,13 +109,11 @@ export default function Navbar({ logo, assets }) {
           display: ["block", "none"],
         }}
       ></Box>
-      {isOpen && (
-        <NavDrawer
-          assets={assets}
-          onClick={handleClick}
-          isOpen={isOpen}
-        ></NavDrawer>
-      )}
+      <NavDrawer
+        assets={assets}
+        onClick={handleClick}
+        isOpen={isOpen}
+      ></NavDrawer>
     </>
   );
 }
