@@ -5,6 +5,7 @@ import Gallery from "@/components/Gallery";
 import ProductStack from "@/components/index/ProductStack";
 import BestAudio from "@/components/layout/BestAudio";
 import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/layout/Footer"
 import logo from "/public/shared-desktop-logo.svg";
 
 
@@ -41,6 +42,7 @@ export default function Home({ assets }) {
       <Gallery assets={assets} />
       <ProductStack assets={assets} />
       <BestAudio assets={assets} />
+      <Footer logo={logo} />
     </>
   );
 }

@@ -17,8 +17,8 @@ import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/layout/Footer"
 import logo from "/public/shared-desktop-logo.svg";
-
 
 export async function getStaticPaths() {
   let slugs = {};
@@ -98,7 +98,7 @@ export default function Product({ assets, slugs }) {
     <>
       <Head>
         <title>{name}</title>
-        <meta name="description" content={description}/>
+        <meta name="description" content={description} />
       </Head>
       <Navbar logo={logo} assets={assets}></Navbar>
       <Container>
@@ -364,6 +364,7 @@ export default function Product({ assets, slugs }) {
         <Gallery assets={assets} />
         <BestAudio assets={assets} />
       </Container>
+      <Footer logo={logo} />
     </>
   );
 }

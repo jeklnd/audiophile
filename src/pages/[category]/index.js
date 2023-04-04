@@ -5,10 +5,10 @@ import { createClient } from "contentful";
 import { Box, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import ProductCard from "@/components/category-pages/ProductCard";
-import Head from "next/head"
+import Head from "next/head";
 import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/layout/Footer";
 import logo from "/public/shared-desktop-logo.svg";
-
 
 export async function getStaticPaths() {
   return {
@@ -67,7 +67,7 @@ export async function getStaticProps() {
 export default function Product({ assets, headphones, speakers, earphones }) {
   const router = useRouter();
   const { category } = router.query;
-  const title = `${category.charAt(0).toUpperCase()}${category.slice(1)}`
+  const title = `${category.charAt(0).toUpperCase()}${category.slice(1)}`;
   // console.log(title)
 
   return (
@@ -103,6 +103,7 @@ export default function Product({ assets, headphones, speakers, earphones }) {
 
       <Gallery assets={assets} />
       <BestAudio assets={assets} />
+      <Footer logo={logo} />
     </>
   );
 }
