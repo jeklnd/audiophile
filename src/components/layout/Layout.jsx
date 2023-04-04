@@ -26,7 +26,6 @@ export default function Layout({ children }) {
           <Box component="main" sx={{ flexGrow: 1 }}>
             {children}
           </Box>
-          <Footer logo={logo} />
         </Box>
       </CssBaseline>
     </ThemeProvider>
